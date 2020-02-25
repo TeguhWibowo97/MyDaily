@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\MPenelitian;
-class PenelitianController extends Controller
+use App\MPenelitianCoffee;
+class CoffeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class PenelitianController extends Controller
      */
     public function index()
     {
-        $penelitian = MPenelitian::all();
-         //dd($penelitian);
+        $penelitian = MPenelitianCoffee::all();
+        //dd($penelitian);
         return view('penelitian.coffee',['penelitian'=>$penelitian]);
     }
 

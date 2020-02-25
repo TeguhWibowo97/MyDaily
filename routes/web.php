@@ -17,5 +17,5 @@ Route::get('/', function () {
 
 Route::get('/dashboard','DashboardController@index');
 
-Route::get('/penelitian/coffee','PenelitianController@index');
-Route::get('/penelitian/alga','PenelitianController@index');
+Route::get('/penelitian/coffee','CoffeeController@index');
+Route::get('/penelitian/alga','CoffeeController@index');

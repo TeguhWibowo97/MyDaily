@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MPenelitian extends Model
+class MPenelitianCoffee extends Model
 {
     protected $table="penelitiancoffee";
 }
