@@ -14,7 +14,7 @@ class PenelitianController extends Controller
     public function index()
     {
         $penelitian = MPenelitian::all();
-        // dd($penelitian);
+         //dd($penelitian);
         return view('penelitian.coffee',['penelitian'=>$penelitian]);
     }
 
