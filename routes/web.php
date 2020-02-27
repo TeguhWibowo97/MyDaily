@@ -18,4 +18,7 @@ Route::get('/', function () {
 Route::get('/dashboard','DashboardController@index');
 
 Route::get('/penelitian/coffee','CoffeeController@index');
-Route::get('/penelitian/alga','CoffeeController@index');
+Route::post('/penelitian/coffee/create','CoffeeController@store');
+Route::get('/penelitian/coffee/edit/{penelitian}','CoffeeController@edit');
+Route::post('/penelitian/coffee/edit/{penelitian}','CoffeeController@update');
+Route::get('/penelitian/coffee/hapus/{penelitian}','CoffeeController@destroy');

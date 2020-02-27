@@ -14,7 +14,6 @@ class CoffeeController extends Controller
     public function index()
     {
         $penelitian = MPenelitianCoffee::all();
-        //dd($penelitian);
         return view('penelitian.coffee',['penelitian'=>$penelitian]);
     }
 
@@ -36,7 +35,8 @@ class CoffeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MPenelitianCoffee::create($request->all());
+        return redirect('/penelitian/coffee')->with('status','Data Berhasil Ditambahkan  ');
     }
 
     /**
@@ -56,9 +56,9 @@ class CoffeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(MPenelitianCoffee $penelitian)
     {
-        //
+        return view('penelitian.editcoffee',['penelitian'=>$penelitian]);
     }
 
     /**
@@ -70,7 +70,13 @@ class CoffeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        MPenelitianCoffee::where('id',$id)
+                ->update([
+                    'tanggal' => $request->tanggal,
+                    'keterangan' => $request->keterangan
+                ]);
+        return redirect('/penelitian/coffee');
     }
 
     /**
@@ -81,6 +87,8 @@ class CoffeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        MPenelitianCoffee::destroy($id);
+
+        return redirect('/penelitian/coffee')->with('status','Data Berhasil Dihapus  ');
     }
 }

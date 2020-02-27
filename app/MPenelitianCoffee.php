@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class MPenelitianCoffee extends Model
 {
     protected $table="penelitiancoffee";
+
+    protected $fillable = ['tanggal','keterangan','dokumen'];
 }
