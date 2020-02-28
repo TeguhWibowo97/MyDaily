@@ -15,10 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard','DashboardController@index');
 
-Route::get('/penelitian/coffee','CoffeeController@index');
-Route::post('/penelitian/coffee/create','CoffeeController@store');
-Route::get('/penelitian/coffee/edit/{penelitian}','CoffeeController@edit');
-Route::post('/penelitian/coffee/edit/{penelitian}','CoffeeController@update');
-Route::get('/penelitian/coffee/hapus/{penelitian}','CoffeeController@destroy');
+Route::get('/login','AuthController@login')->name('login');
+Route::post('/postlogin','AuthController@postlogin');
+Route::get('/logout','AuthController@logout');
+
+Route::group(['middleware'=>'auth'], function(){
+    
+    Route::get('/dashboard','DashboardController@dashboard')->middleware('auth');
+    
+    Route::post('/penelitian/coffee/create','CoffeeController@store');
+    Route::get('/penelitian/coffee','CoffeeController@index');
+    Route::get('/penelitian/coffee/edit/{penelitian}','CoffeeController@edit');
+    Route::post('/penelitian/coffee/edit/{penelitian}','CoffeeController@update');
+    Route::get('/penelitian/coffee/hapus/{penelitian}','CoffeeController@destroy');
+
+});
