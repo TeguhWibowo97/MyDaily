@@ -2,6 +2,9 @@
 
 @section('title','Penelitian Coffee')
 @section('judul','Penelitian Coffee')
+@section('imgjudul')
+  <i class="fas fa-coffee"></i>
+@endsection
 
 @section('content')
     <button class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>

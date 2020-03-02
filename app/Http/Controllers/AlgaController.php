@@ -2,26 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\MPenelitianCoffee;
-class CoffeeController extends Controller
+use App\MPenelitianAlga;
+
+class AlgaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $data = auth()->user()->name;
         $tampil = 'Admin';
 
         if($data != $tampil){
-            $penelitian = MPenelitianCoffee::where('user',$data)->get();
-            return view('penelitian.coffee',['penelitian'=>$penelitian]);
+            $penelitian = MPenelitianAlga::where('user',$data)->get();
+            return view('penelitian.alga',['penelitian'=>$penelitian]);
         }else{
-            $penelitian = MPenelitianCoffee::all();
-            return view('penelitian.coffee',['penelitian'=>$penelitian]);
+            $penelitian = MPenelitianAlga::all();
+            return view('penelitian.alga',['penelitian'=>$penelitian]);
         }
     }
 
@@ -43,13 +41,13 @@ class CoffeeController extends Controller
      */
     public function store(Request $request)
     {
-        $user = MPenelitianCoffee::create([
+        $user = MPenelitianAlga::create([
             'user' => auth()->user()->name,
             'tanggal' => $request->tanggal,
             'keterangan' => $request->keterangan,
         ]);
         $user -> save();
-        return redirect('/penelitian/coffee')->with('status','Data Berhasil Ditambahkan');
+        return redirect('/penelitian/alga')->with('status','Data Berhasil Ditambahkan');
     }
 
     /**
@@ -69,9 +67,9 @@ class CoffeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(MPenelitianCoffee $penelitian)
+    public function edit(MPenelitianAlga $penelitian)
     {
-        return view('penelitian.editcoffee',['penelitian'=>$penelitian]);
+        return view('penelitian.editalga',['penelitian'=>$penelitian]);
     }
 
     /**
@@ -83,13 +81,13 @@ class CoffeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        MPenelitianCoffee::where('id',$id)
+        MPenelitianAlga::where('id',$id)
                 ->update([
                     
                     'tanggal' => $request->tanggal,
                     'keterangan' => $request->keterangan
                 ]);
-        return redirect('/penelitian/coffee');
+        return redirect('/penelitian/alga');
     }
 
     /**
@@ -100,8 +98,8 @@ class CoffeeController extends Controller
      */
     public function destroy($id)
     {
-        MPenelitianCoffee::destroy($id);
+        MPenelitianAlga::destroy($id);
 
-        return redirect('/penelitian/coffee')->with('status','Data Berhasil Dihapus  ');
+        return redirect('/penelitian/alga')->with('status','Data Berhasil Dihapus  ');
     }
 }

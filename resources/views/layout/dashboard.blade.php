@@ -2,7 +2,9 @@
 
 @section('title','Dashboard')
 @section('judul','Dashboard')
-
+@section('imgjudul')
+  <i class="fas fa-tachometer-alt"></i>
+@endsection
 
 @section('content')
 <div class="row m-t-25">

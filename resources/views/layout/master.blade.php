@@ -178,7 +178,7 @@
                                     <a href="/penelitian/coffee">Penelitian Coffee</a>
                                 </li>
                                 <li>
-                                    <a href="#">Penelitian Alga</a>
+                                    <a href="/penelitian/alga">Penelitian Alga</a>
                                 </li>
                             
                             </ul>
@@ -230,7 +230,7 @@
                                             <img src="/assetAdmin/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">Teguh Wibowo</a>
+                                            <a class="js-acc-btn" href="#">{{auth()->user()->name}}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -274,7 +274,7 @@
                             <div class="col-md-12">
                                 <div class="overview-wrap">
                                     <h2 class="title-1">
-                                    <i class="fas fa-coffee"></i>
+                                    @yield('imgjudul') 
                                     @yield('judul')</h2>
                                 </div>
                             </div>
