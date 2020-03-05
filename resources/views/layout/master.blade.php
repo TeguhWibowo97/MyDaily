@@ -197,8 +197,29 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Workshop</a>
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-table"></i>BKD
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="/bkd/identitas">Identitas</a>
+                                </li>
+                                <li>
+                                    <a href="#">Kinerja Bidang Pendidikan</a>
+                                </li>
+                                <li>
+                                    <a href="#">Kinerja Bidang Penelitian</a>
+                                </li>
+                                <li>
+                                    <a href="#">Kinerja Bidang Pengabdian Masyarakat</a>
+                                </li>
+                                <li>
+                                    <a href="#">Kinerja Penunjang Lainnya</a>
+                                </li>
+                                <li>
+                                    <a href="#">Kinerja Khusus</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="calendar.html">
@@ -283,7 +304,7 @@
                             @yield('content')
                         </div>
                         <div class="row">
-                            <div class="col-md-12 ">
+                            <div class="col-md-12 my-3">
                                 <div class="copyright bg-warning pb-3 ">
                                     <p class="text-primary">Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
                                 </div>

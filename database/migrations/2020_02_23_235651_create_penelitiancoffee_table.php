@@ -15,9 +15,10 @@ class CreatePenelitiancoffeeTable extends Migration
     {
         Schema::create('penelitiancoffee', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->String('tanggal',20);
-            $table->String('keterangan',255);
-            $table->String('dokumen',100);
+            $table->String('user',30)->nullable();
+            $table->String('tanggal',20)->nullable();            
+            $table->String('keterangan',255)->nullable();
+            $table->String('dokumen',100)->nullable();
             $table->timestamps();
         });
     }

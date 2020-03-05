@@ -36,4 +36,8 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/penelitian/alga/edit/{penelitian}','AlgaController@edit');
     Route::post('/penelitian/alga/edit/{penelitian}','AlgaController@update');
     Route::get('/penelitian/alga/hapus/{penelitian}','AlgaController@destroy');
+
+    // BKD
+    Route::get('/bkd/identitas','BkdController@identitas');
+    Route::post('/bkd/update','BkdController@input');
 });
